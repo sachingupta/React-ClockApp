@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    class ClockApp extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {date: new Date()};
+        }
+        
+        /* The componentDidMount() hook runs after the component output has been rendered to the DOM. This is a good place to set up a timer:*/
+        componentDidMount() {
+            this.timerID = setInterval(
+                                () => this.tick(),
+                                1000
+                              );
+        }
+
+       componentWillUnmount() {
+
+        }
+
+       tick() {
+           this.setState({
+              date: new Date()
+            });
+       }
+
+        render(){
+          return (
+                <div>
+                  <h1>Your Clock!</h1>
+                  <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                </div>
+              );
+        }
+    }
+
+    ReactDOM.render(<ClockApp />, document.getElementById('root'));
+
+    </script>
+
+        <script type="text/babel">
+
+    </script>
+
+  </body>
+</html>
