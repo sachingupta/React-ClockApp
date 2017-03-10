@@ -6,3 +6,4 @@ To use this app download index.html and open in Browser
 Note
 1. using the in-browser Babel transformer. Be sure to precompile your scripts for production - https://babeljs.io/docs/setup/
 2. for More information check https://facebook.github.io/react/docs/state-and-lifecycle.html
+3. It is using ES6/ECMAScript2015 features such as class, arrow functions
